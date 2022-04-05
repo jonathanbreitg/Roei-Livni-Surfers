@@ -21,5 +21,5 @@ transform = Transform( 18.6193, 0, 0, 0, 1, 0, 0, 0, 10.242, 0, -5.60725, -79.46
 use_collision = true
 depth = 24.0297
 
-[node name="Spatial" parent="." instance=ExtResource( 3 )]
+[node name="spike" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.16296, -3.68204, -18.047 )

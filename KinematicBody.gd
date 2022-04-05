@@ -47,3 +47,8 @@ func _process(delta):
 	move_and_slide(move,Vector3.UP)
 	if !is_on_floor():
 		move.y -= decel
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		#print(collision.collider.name)
+		if collision.collider.name == "spike_body":
+			get_tree().change_scene("res://death_screen.tscn")
