@@ -79,7 +79,7 @@ func _process(delta):
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "spike_body":
 			print("collided with spike?")
-			get_tree().change_scene("res://death_screen.tscn")
+			$Control.is_paused = true
 		elif collision.collider.name == "floor":
 			pass
 		else:

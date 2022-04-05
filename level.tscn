@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/swipe_controller/swipe_controller.gd" type="Script" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level.gd" type="Script" id=4]
 [ext_resource path="res://moving_spike_horizontal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://barak.webp" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 6 )
+uv1_scale = Vector3( 0.1, 0.1, 0.5 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 19.0273
 
 [node name="level" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.62706, 0.24687 )
@@ -19,10 +26,18 @@ area_size = Vector2( 1920, 4000 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.86404, 0 )
 
 [node name="floor" type="CSGBox" parent="."]
-transform = Transform( 18.6193, 0, 0, 0, 1, 0, 0, 0, 10.242, 1.508, -17.971, -5113.54 )
+transform = Transform( 18.6193, 0, 0, 0, 1, 0, 0, 0, 10.242, 1.508, -17.971, 0 )
 use_collision = true
 height = 19.188
 depth = 78.334
+
+[node name="CSGBox" type="CSGBox" parent="floor"]
+transform = Transform( -2.43833e-07, -0.115462, 0, -2.43833e-07, 2.20612e-16, -9.81752, 5.57824, -5.04702e-09, -4.29138e-07, -1.06328, 20.98, -5.61266 )
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="floor"]
+transform = Transform( -2.43833e-07, -0.115462, 0, -2.43833e-07, 2.20612e-16, -9.81752, 5.57824, -5.04702e-09, -4.29138e-07, 1.09154, 20.98, -5.61266 )
+material = SubResource( 1 )
 
 [node name="spike" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.16296, -3.68204, -18.047 )

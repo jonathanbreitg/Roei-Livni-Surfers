@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://KinematicBody.gd" type="Script" id=1]
 [ext_resource path="res://roei.jpeg" type="Texture" id=2]
+[ext_resource path="res://death_screen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pyramid.obj" type="ArrayMesh" id=4]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
@@ -9,12 +11,20 @@ albedo_texture = ExtResource( 2 )
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 2, 2, 2 )
 
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_offset = Vector3( -0.562, -0.358, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 19.6983
+
 [node name="Spatial" type="Spatial"]
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
 script = ExtResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="KinematicBody"]
+visible = false
 width = 4.0
 height = 4.0
 depth = 4.0
@@ -42,3 +52,13 @@ margin_left = 40.0
 margin_right = 80.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0.988235, 1, 0, 1 )
+
+[node name="Control" parent="KinematicBody" instance=ExtResource( 3 )]
+pause_mode = 2
+visible = false
+
+[node name="pyramid" type="MeshInstance" parent="KinematicBody"]
+transform = Transform( 1.43054, 0, 0, 0, 1.59907, 0, 0, 0, 1.40103, 0, 0, 0 )
+mesh = ExtResource( 4 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
