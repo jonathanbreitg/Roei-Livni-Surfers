@@ -21,7 +21,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.86404, 0 )
 transform = Transform( 18.6193, 0, 0, 0, 1, 0, 0, 0, 10.242, 1.508, -17.971, -5113.54 )
 use_collision = true
 height = 19.188
-depth = 1000.0
+depth = 78.334
 
 [node name="spike" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.16296, -3.68204, -18.047 )

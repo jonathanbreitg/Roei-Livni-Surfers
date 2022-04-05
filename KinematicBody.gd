@@ -78,6 +78,7 @@ func _process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "spike_body":
+			print("collided with spike?")
 			get_tree().change_scene("res://death_screen.tscn")
 	cam.global_transform.origin.y = cam_offset
 	speed -= speed_up_const
