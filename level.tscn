@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/swipe_controller/swipe_controller.gd" type="Script" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://spike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level.gd" type="Script" id=4]
+
+[node name="level" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.62706, 0.24687 )
+script = ExtResource( 4 )
+
+[node name="SwipeScreenArea" type="Node2D" parent="."]
+position = Vector2( 135, 300 )
+script = ExtResource( 1 )
+area_size = Vector2( 1920, 4000 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.86404, 0 )
+
+[node name="floor" type="CSGBox" parent="."]
+transform = Transform( 18.6193, 0, 0, 0, 1, 0, 0, 0, 10.242, 1.508, -17.971, -5113.54 )
+use_collision = true
+height = 19.188
+depth = 1000.0
+
+[node name="spike" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.16296, -3.68204, -18.047 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
