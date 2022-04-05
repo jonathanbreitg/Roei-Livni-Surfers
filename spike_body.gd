@@ -10,6 +10,7 @@ var is_mid = false
 var dist = 8
 var maxleft = -dist
 var maxright = dist
+var const_x_speed = 15
 var is_right = false
 var speed = Vector3.ZERO
 var val
@@ -26,16 +27,15 @@ func _ready():
 	#	is_right = true
 	#else:
 	#	print("what how")
-	speed.x = 10
-	val = randi() % 2 
-	if val == 1:
+	speed.x = const_x_speed
+	val = randi() % 2
+	print("val is ::::::::::::::::: ",val) 
+	if val == 0:
 		is_left = true
-	elif val == 2:
+	elif val == 1:
 		is_right = true
-	else:
-		print("VAL IS 2 INCLUSIVE !!!")
 	if is_left:
-		speed.x = -10
+		speed.x = -const_x_speed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 

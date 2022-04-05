@@ -19,7 +19,7 @@ var vel = Vector3.ZERO
 onready var score_label = $score_num
 var move = Vector3.ZERO
 var cam_offset = 18.3
-var speed_up_const = 0.01
+var speed_up_const = 0.02
 onready var cam = $Camera
 # Called when the node enters the scene tree for the first time.
 func _ready():
