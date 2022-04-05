@@ -9,9 +9,11 @@ var copy
 var offset = 30
 var dist = 8
 var i
+var scene_to_clone
 onready var floor_obj = $floor
 onready var player = $player/KinematicBody
 var spike_scene = preload("res://spike.tscn")
+var moving_spike_scene = preload("res://moving_spike_horizontal.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -25,7 +27,11 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	copy = spike_scene.instance()
+	if randi() % 5 == 4:
+		scene_to_clone = moving_spike_scene
+	else:
+		scene_to_clone = spike_scene
+	copy = scene_to_clone.instance()
 	self.add_child(copy)
 	copy.global_transform.origin.z = -70 + -i * offset
 	copy.global_transform.origin.x = -8 + (randi() % 3) * 8

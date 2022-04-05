@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/swipe_controller/swipe_controller.gd" type="Script" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level.gd" type="Script" id=4]
+[ext_resource path="res://moving_spike_horizontal.tscn" type="PackedScene" id=5]
 
 [node name="level" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.62706, 0.24687 )
@@ -29,5 +30,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.16296, -3.68204, -18.047 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 autostart = true
+
+[node name="spike2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.682, -70.7285 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

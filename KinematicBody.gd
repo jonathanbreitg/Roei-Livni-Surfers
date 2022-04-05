@@ -40,7 +40,7 @@ func _process(delta):
 			print(global_transform.origin.x)
 			if global_transform.origin.x < abs(1):
 				global_transform.origin.x = maxleft
-			elif global_transform.origin.x - maxright < abs(1):
+			elif abs(global_transform.origin.x - maxright) < abs(1):
 				global_transform.origin.x = 0
 			else:
 				global_transform.origin.x = 0
@@ -54,7 +54,7 @@ func _process(delta):
 			if abs(global_transform.origin.x) < abs(1):
 				global_transform.origin.x = maxright
 				print("move to far right")
-			elif global_transform.origin.x - maxleft < abs(1):
+			elif abs(global_transform.origin.x - maxleft) < abs(1):
 				print("move to mid")
 				global_transform.origin.x = 0
 			else:
@@ -80,6 +80,10 @@ func _process(delta):
 		if collision.collider.name == "spike_body":
 			print("collided with spike?")
 			get_tree().change_scene("res://death_screen.tscn")
+		elif collision.collider.name == "floor":
+			pass
+		else:
+			print(collision.collider.name)
 	cam.global_transform.origin.y = cam_offset
 	speed -= speed_up_const
 	print(move.y)
