@@ -10,6 +10,7 @@ export(int) var LIMIT = 10
 var current_text = ''
 var cursor_line = 0
 var cursor_column = 0
+var text_to_enter = ""
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -41,6 +42,8 @@ func set_is_paused(value):
 			print("query is",query)
 			var headers = ["Content-Type: application/json","Access-Control-Allow-Credentials: true","Access-Control-Allow-Origin: *"]
 			$HTTPRequest_post.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
+
+
 
 
 func _on_Button_pressed():
@@ -139,3 +142,11 @@ func _on_TextEdit_text_changed():
 	# save current position of cursor for when we have reached the limit
 	cursor_line = $text_label2/TextEdit.cursor_get_line()
 	cursor_column = $text_label2/TextEdit.cursor_get_column()
+
+func _ready():
+	connect("focus_entered", self, "js_text_entry")
+
+func js_text_entry():
+	text_to_enter = JavaScript.eval("prompt('%s', '%s');" % ["Please enter text:", text_to_enter], true)
+	release_focus()
+	print(text_to_enter)
