@@ -1,6 +1,8 @@
 # Roei-Livni-Surfers
 roei livni moment, i'll update the readme later
 
+if you just wanna play it you can go to https://jonathanbreitg.github.io/Roei-Livni-Surfers/ and play the demo
+
 # TO:DO:
 movement ✅ 
 
