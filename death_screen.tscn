@@ -125,6 +125,7 @@ margin_bottom = 526.0
 text = "change username"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="text_label2/TextEdit" to="." method="_on_TextEdit_focus_entered"]
 [connection signal="text_changed" from="text_label2/TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest_post" to="." method="_on_HTTPRequest_post_request_completed"]

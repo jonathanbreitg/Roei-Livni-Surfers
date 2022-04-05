@@ -27,7 +27,6 @@ func set_is_paused(value):
 	curr_score = get_parent().score
 	print(curr_score)
 	$score.text = str(curr_score)
-	username = $text_label2/TextEdit.text
 	print(username)
 	$HTTPRequest.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/get_leaderboard")
 	if curr_score > high_score:
@@ -119,7 +118,8 @@ func _on_change_username_button_pressed():
 	$text_label2/Label.visible = false
 	$text_label2/TextEdit.visible = false
 	print("changed username")
-	username = $text_label2/TextEdit.text
+	if !$text_label2/TextEdit.text == "":
+		username = $text_label2/TextEdit.text
 	var data_to_send = {"data" : [username,high_score]}
 	var query = JSON.print(data_to_send)
 	print("query is",query)
@@ -143,10 +143,13 @@ func _on_TextEdit_text_changed():
 	cursor_line = $text_label2/TextEdit.cursor_get_line()
 	cursor_column = $text_label2/TextEdit.cursor_get_column()
 
-func _ready():
-	connect("focus_entered", self, "js_text_entry")
 
-func js_text_entry():
+
+
+
+func _on_TextEdit_focus_entered():
 	text_to_enter = JavaScript.eval("prompt('%s', '%s');" % ["Please enter text:", text_to_enter], true)
 	release_focus()
 	print(text_to_enter)
+	username = text_to_enter
+	$change_username_button.visible = true
