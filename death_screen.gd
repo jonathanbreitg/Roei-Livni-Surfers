@@ -39,7 +39,7 @@ func set_is_paused(value):
 			var data_to_send = {"data" : [username,high_score]}
 			var query = JSON.print(data_to_send)
 			print("query is",query)
-			var headers = ["Content-Type: application/json"]
+			var headers = ["Content-Type: application/json","Access-Control-Allow-Credentials: true","Access-Control-Allow-Origin: *"]
 			$HTTPRequest_post.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
 
 
@@ -120,7 +120,7 @@ func _on_change_username_button_pressed():
 	var data_to_send = {"data" : [username,high_score]}
 	var query = JSON.print(data_to_send)
 	print("query is",query)
-	var headers = ["Content-Type: application/json"]
+	var headers = ["Content-Type: application/json","Access-Control-Allow-Credentials: true","Access-Control-Allow-Origin: *"]
 	$HTTPRequest_post.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
 
 func _on_TextEdit_text_changed():
