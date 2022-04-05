@@ -6,13 +6,13 @@ if you just wanna play it you can go to https://jonathanbreitg.github.io/Roei-Li
 # TO:DO:
 movement ✅ 
 
-Better movement (fixed x position) ❌
+Better movement (fixed x position) ✅
 
 Enemies ½✅
 
-NORMAL FUCKING HITBOXES ❌
+NORMAL FUCKING HITBOXES ✅
 
-web export ½✅
+web export ✅
 
 Android export✅
 
@@ -20,12 +20,12 @@ Level❌
 
 Materials❌
 
-High score❌
+High score ½✅
 
 Coins/ roei coins ❌
 
 Online leaderboard ❌
 
-Replay ❌
+Replay ✅
 
 Death animation ❌
