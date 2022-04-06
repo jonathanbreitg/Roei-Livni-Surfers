@@ -30,7 +30,7 @@ var vel = Vector3.ZERO
 onready var score_label = $score_num
 var move = Vector3.ZERO
 var cam_offset = 18.3
-var speed_up_const = 0.02
+var speed_up_const = 1.2
 onready var cam = $Camera
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -149,8 +149,9 @@ func _process(delta):
 			moving_right = false
 	cam.global_transform.origin.y = cam_offset
 	speed -= speed_up_const * delta
-	raw_score += 1 / delta
-	if raw_score > score * 500:
-		score += 1
+	raw_score += 1 * delta
+	print(raw_score)
+	score = raw_score * 8
+	score = int(score)
 	score_label.text = str(score)
 	
