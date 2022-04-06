@@ -8,7 +8,7 @@ movement ✅
 
 Better movement (fixed x position) ✅
 
-Enemies ½✅
+Enemies ¾✅
 
 NORMAL FUCKING HITBOXES ✅
 
@@ -16,16 +16,27 @@ web export ✅
 
 Android export✅
 
-Level❌
+Level ¼✅
 
 Materials✅
 
-High score ½✅
+High score ✅
 
 Coins/ roei coins ❌
 
-Online leaderboard ❌
+Online leaderboard ✅
 
 Replay ✅
 
-Death animation ❌
+Powerups maybe¿❓
+
+Add pickaxe game logo + splashscreen + opening animation ❌
+
+Walls you can't jump over ❌
+
+School floor ❌
+
+Eliran malcha boss fight ❌
+
+Obama Easter egg ⅛✅
+
