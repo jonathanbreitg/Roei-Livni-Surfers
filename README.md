@@ -30,3 +30,13 @@ Replay ✅
 
 Powerups maybe¿❓
 
+Add pickaxe game logo + splashscreen + opening animation ❌
+
+Walls you can't jump over ❌
+
+School floor ❌
+
+Eliran malcha boss fight ❌
+
+Obama Easter egg ⅛✅
+
