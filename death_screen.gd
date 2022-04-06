@@ -24,6 +24,8 @@ func set_is_paused(value):
 	visible = is_paused
 	leaderboard = []
 	leaderboard_str = ""
+	$ColorRect2/Trophy.visible = false
+	$ColorRect2/Multiplayer.visible = true
 	curr_score = get_parent().score
 	print(curr_score)
 	$score.text = str(curr_score)
@@ -80,6 +82,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		for pair in leaderboard:
 			leaderboard_str += str(pair[0]) + ": " + str(pair[1]) + "\n"
 		$ColorRect2/leaderboard_Text.text = str(leaderboard_str)
+		$ColorRect2/Trophy.visible = true
+		$ColorRect2/Multiplayer.visible = false
 	else:
 		$ColorRect2/leaderboard_Text.text = "problems connecting to the server....."
 	$HTTPRequest.cancel_request()
