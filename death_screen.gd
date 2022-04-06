@@ -57,6 +57,8 @@ func _on_Button_pressed():
 	get_parent().score = 0
 	get_parent().raw_score = 0
 	get_parent().speed = -7
+	get_parent().move = Vector3.ZERO
+	get_parent().just_started = true
 
 
 func dict_to_array(dic):
@@ -86,6 +88,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		$ColorRect2/Multiplayer.visible = false
 	else:
 		$ColorRect2/leaderboard_Text.text = "problems connecting to the server....."
+		$ColorRect2/Multiplayer.visible = false
 	$HTTPRequest.cancel_request()
 
 

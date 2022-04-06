@@ -34,7 +34,7 @@ func _on_Timer_timeout():
 		scene_to_clone = spike_scene
 	copy = scene_to_clone.instance()
 	self.add_child(copy)
-	copy.global_transform.origin.z = -70 + -i * offset
+	copy.global_transform.origin.z = -30 + -i * offset
 	copy.global_transform.origin.x = -8 + (randi() % 3) * 8
 	copy.global_transform.origin.y = 3.5
 	i += 1

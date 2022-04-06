@@ -15,7 +15,7 @@ var jump_boost = 50
 var pulldown_const = 3600
 var raw_score = 0
 var score = 0
-
+var just_started = true
 var global_transform_origin_copy
 
 var moving_far_left = false
@@ -104,7 +104,7 @@ func _process(delta):
 		move.y -= decel * delta
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		if collision.collider.name == "spike_body":
+		if collision.collider.name == "spike_body" && !just_started:
 			print("collided with spike?")
 			$Control.is_paused = true
 		elif collision.collider.name == "floor":
@@ -153,5 +153,7 @@ func _process(delta):
 	print(raw_score)
 	score = raw_score * 8
 	score = int(score)
+	if score == 20:
+		just_started = false
 	score_label.text = str(score)
 	
