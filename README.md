@@ -8,7 +8,7 @@ movement ✅
 
 Better movement (fixed x position) ✅
 
-Enemies ½✅
+Enemies ¾✅
 
 NORMAL FUCKING HITBOXES ✅
 
@@ -16,16 +16,17 @@ web export ✅
 
 Android export✅
 
-Level❌
+Level ¼✅
 
 Materials✅
 
-High score ½✅
+High score ✅
 
 Coins/ roei coins ❌
 
-Online leaderboard ❌
+Online leaderboard ✅
 
 Replay ✅
 
-Death animation ❌
+Powerups maybe¿❓
+
