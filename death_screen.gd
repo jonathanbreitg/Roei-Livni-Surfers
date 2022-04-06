@@ -28,7 +28,7 @@ func set_is_paused(value):
 	print(curr_score)
 	$score.text = str(curr_score)
 	print(username)
-	$HTTPRequest.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/get_leaderboard")
+	$HTTPRequest.request("https://roei-livni-surfers-server2.jonathanbreitg.repl.co/get_leaderboard")
 	if curr_score > high_score:
 		print("NEW HIGHSCORE!")
 		high_score = curr_score
@@ -40,7 +40,7 @@ func set_is_paused(value):
 			var query = JSON.print(data_to_send)
 			print("query is",query)
 			var headers = ["Content-Type: application/json","Access-Control-Allow-Credentials: true","Access-Control-Allow-Origin: *"]
-			$HTTPRequest_post.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
+			$HTTPRequest_post.request("https://roei-livni-surfers-server2.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
 
 
 
@@ -124,7 +124,7 @@ func _on_change_username_button_pressed():
 	var query = JSON.print(data_to_send)
 	print("query is",query)
 	var headers = ["Content-Type: application/json","Access-Control-Allow-Credentials: true","Access-Control-Allow-Origin: *"]
-	$HTTPRequest_post.request("https://roei-livni-surfers-server.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
+	$HTTPRequest_post.request("https://roei-livni-surfers-server2.jonathanbreitg.repl.co/upload_score",headers,false, HTTPClient.METHOD_POST, query)
 
 func _on_TextEdit_text_changed():
 	$change_username_button.visible = true
