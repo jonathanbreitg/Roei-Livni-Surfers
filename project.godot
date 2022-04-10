@@ -13,7 +13,7 @@ config_version=4
 config/name="Roei Livni surfers"
 run/main_scene="res://SplashScreenScene.tscn"
 boot_splash/image="res://images/bg-small-for-android.png"
-config/icon="res://icon.png"
+config/icon="res://barak.webp"
 
 [display]
 
